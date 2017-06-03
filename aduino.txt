@@ -1,0 +1,22 @@
+
+int threshold=80;
+int a[1];
+// the setup routine runs once when you press reset:
+void setup() {
+  // initialize serial communication at 9600 bits per second:
+  Serial.begin(9600);
+}
+
+// the loop routine runs over and over again forever:
+void loop() {
+  // read the input on analog pin 0:
+  int sensorValue = analogRead(A7);
+  // print out the value you read:
+  if(sensorValue>threshold)
+  {
+   a[0]=sensorValue;
+  delay(10); 
+  Serial.println(a[0]);
+  delay(100);  
+  }  // delay in between reads for stability
+}
